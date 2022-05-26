@@ -2,7 +2,7 @@
   "name": "react-template",
   "version": "1.0.0",
   "description": "Preconfigured react template compatible with style agnostic components approach.",
-  "main": "index.js",
+  "main": "dist/index.html",
   "scripts": {
     "build": "webpack --mode=production",
     "dev": "webpack --mode=development",
@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/omatviiv/react-template#readme",
   "devDependencies": {
+    "@types/react": "^18.0.9",
     "@types/react-dom": "^18.0.5",
     "html-webpack-plugin": "^5.5.0",
     "ts-loader": "^9.3.0",
