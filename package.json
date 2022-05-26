@@ -1,0 +1,19 @@
+{
+  "name": "react-template",
+  "version": "1.0.0",
+  "description": "Preconfigured react template compatible with style agnostic components approach.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/omatviiv/react-template.git"
+  },
+  "author": "Oleh Matviiv",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/omatviiv/react-template/issues"
+  },
+  "homepage": "https://github.com/omatviiv/react-template#readme"
+}
