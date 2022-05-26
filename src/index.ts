@@ -1,6 +1,5 @@
-function test(): void {
-  const a: number = 1;
-  console.log('test variable = ', a);
-}
+import { createRoot } from 'react-dom/client';
 
-test();
+const ApplicationContainer = document.getElementById('application-container');
+
+createRoot(ApplicationContainer).render('This is simples react app');
