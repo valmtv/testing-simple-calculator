@@ -4,8 +4,8 @@
   "description": "Preconfigured react template compatible with style agnostic components approach.",
   "main": "dist/index.html",
   "scripts": {
-    "build": "webpack --mode=production",
-    "dev": "webpack --mode=development",
+    "build": "webpack -c ./webpack/config.prod.js",
+    "dev": "webpack -c ./webpack/config.dev.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
