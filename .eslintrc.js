@@ -29,5 +29,6 @@ module.exports = {
     quotes: ['error', 'single'],
     semi: ['error', 'always'],
     'max-len': ['error', { 'code': 80 }],
+    'no-console': ['error', { allow: ['warn', 'error'] }],
   },
 };
