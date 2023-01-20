@@ -47,3 +47,10 @@ project created with node 18 and npm 8
 fixed with the help of these comments:
 - https://github.com/jsx-eslint/eslint-plugin-react/issues/1955#issuecomment-437532908
 - https://github.com/jsx-eslint/eslint-plugin-react/issues/1955#issuecomment-437533089
+6. Configure webpack to run eslint for dev script while watching file changes.
+As eslint-loader is deprecated used `eslint-webpack-plugin`.
+But without specifying options to that plugin eslint simply doesn't run and no
+errors produces. Unfortunately plugin documentation states that options can be
+provided. Which gives an impression that options are not requied for the eslint
+to work. Also no examples provided.
+Found useful this stackoverflow [article](https://stackoverflow.com/questions/66521418/eslint-webpack-plugin-no-output-file-and-no-errors)
