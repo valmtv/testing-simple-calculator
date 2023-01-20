@@ -11,6 +11,7 @@ module.exports = {
       extensions: ['js', 'mjs', 'jsx', 'ts', 'tsx'],
     }),
   ],
+  stats: 'minimal',
   devServer: {
     static: './dist',
     port: 8000,
