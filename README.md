@@ -54,3 +54,9 @@ errors produces. Unfortunately plugin documentation states that options can be
 provided. Which gives an impression that options are not requied for the eslint
 to work. Also no examples provided.
 Found useful this stackoverflow [article](https://stackoverflow.com/questions/66521418/eslint-webpack-plugin-no-output-file-and-no-errors)
+
+## Jest
+The simplest way to configure jest to work with typescript is to use ts-jest.
+It will add support for imports and there is no need to install babel.
+
+[how to use ts-jest](https://github.com/kulshekhar/ts-jest)
