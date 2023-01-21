@@ -68,3 +68,7 @@ Just followed instructions on svgr
 
 To fix typescript error after svgr is added there has to be svg global
 declaration available to typescript. Check `src/type/svg.d.ts`.
+
+When using suggested resourseQuery method to be able to use svg as url there was
+typescript related issue which was fixed with the help of this
+[question](https://stackoverflow.com/questions/60816666/how-to-use-query-param-import-in-webpack-with-typescript-without-getting-cannot).
