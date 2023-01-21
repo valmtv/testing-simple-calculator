@@ -60,3 +60,11 @@ The simplest way to configure jest to work with typescript is to use ts-jest.
 It will add support for imports and there is no need to install babel.
 
 [how to use ts-jest](https://github.com/kulshekhar/ts-jest)
+
+## SVGR
+Very useful library that allows to automatically transform svg into react component.
+Just followed instructions on svgr
+[documentation](https://react-svgr.com/docs/webpack/) to install it.
+
+To fix typescript error after svgr is added there has to be svg global
+declaration available to typescript. Check `src/type/svg.d.ts`.

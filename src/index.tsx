@@ -1,6 +1,6 @@
 import React from 'react';
 import {createRoot} from 'react-dom/client';
-import Application from './view/application';
+import Application from './app';
 
 const ApplicationContainer = document.getElementById('application-container');
 
