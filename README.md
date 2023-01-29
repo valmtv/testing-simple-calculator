@@ -3,7 +3,10 @@ React template compatible with style agnostic components approach.
 # node & npm versions
 project created with node 18 and npm 8
 
-# Setup notes
+# Build setup notes
+The same build setup **has to be used for style-agnostic-component** template.
+So everytime some changes introduced to react-template same changes have to be
+applied to style-agnostic-component.
 
 ## Eslint
 1. Install `npm install eslint --save-dev`
