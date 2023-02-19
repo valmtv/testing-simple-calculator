@@ -3,12 +3,27 @@ const path = require('path');
 
 module.exports = {
   entry: './src/index.tsx',
+  resolve: {
+    extensions: ['.tsx', '.ts', '.js'],
+    alias: {
+      src: path.resolve(__dirname, '../src/'),
+    },
+  },
+  output: {
+    path: path.resolve(__dirname, '../dist'),
+    filename: 'bundle.js',
+  },
   module: {
+    strictExportPresence: true,
     rules: [
       {
         test: /\.tsx?$/,
         use: 'ts-loader',
         exclude: /node_modules/,
+        include: [
+          path.resolve(__dirname, '../src'),
+          path.resolve(__dirname, '../node_modules/styleagnostic-bare-input'),
+        ],
       },
       {
         test: /\.svg$/i,
@@ -22,16 +37,6 @@ module.exports = {
         use: ['@svgr/webpack'],
       },
     ],
-  },
-  resolve: {
-    extensions: ['.tsx', '.ts', '.js'],
-    alias: {
-      src: path.resolve(__dirname, '../src/'),
-    },
-  },
-  output: {
-    path: path.resolve(__dirname, '../dist'),
-    filename: 'bundle.js',
   },
   plugins: [
     new HtmlWebpackPlugin({
