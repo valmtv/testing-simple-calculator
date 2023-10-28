@@ -1,7 +1,7 @@
 React template compatible with style agnostic components approach.
 
 # node & npm versions
-project created with node 18 and npm 8
+project created with node 20 and npm 10
 
 # Build setup notes
 The same build setup **has to be used for style-agnostic-component** template.
