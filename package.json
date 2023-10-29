@@ -5,6 +5,7 @@
   "main": "dist/index.html",
   "scripts": {
     "build": "webpack -c ./webpack/prod.config.js",
+    "analyze-build": "webpack -c ./webpack/analyze-prod.config.js",
     "dev": "webpack serve -c ./webpack/dev.config.js",
     "lint": "eslint src",
     "test": "jest",
@@ -36,7 +37,8 @@
     "ts-jest": "^29.0.5",
     "ts-loader": "^9.4.2",
     "typescript": "^4.9.4",
-    "webpack": "^5.75.0",
+    "webpack": "^5.89.0",
+    "webpack-bundle-analyzer": "^4.9.1",
     "webpack-cli": "^4.10.0",
     "webpack-dev-server": "^4.11.1"
   },
