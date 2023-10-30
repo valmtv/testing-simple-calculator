@@ -6,7 +6,7 @@ project created with node 20 and npm 10
 # Build setup notes
 The same build setup **has to be used for style-agnostic-component** template.
 So everytime some changes introduced to react-template same changes have to be
-applied to style-agnostic-component.
+applied to styleagnostic-component.
 
 ## Eslint
 1. Install `npm install eslint --save-dev`

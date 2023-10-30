@@ -17,24 +17,27 @@ module.exports = {
     strictExportPresence: true,
     rules: [
       {
-        // this only matches filenames that end with .ts or .tsx
-        // but not with test.ts or test.tsx
-        // WHY DO WE NEED IT: to ensure that test files newer appear in bundle
+        // accept files ending with .ts or .tsx but not .test.ts or .test.tsx
+        //
+        // WHY DO WE NEED IT:
+        // to ensure that test files newer appear in bundle even if
+        // somebody imports something from such file by mistakej
+        //
+        // HOW TO TEST THIS SOLUTION:
         // this solution tested using webpack-bundle-analyzer by creating
-        // file wich ends with test.ts and importing from it something
+        // file wich ends with .test.ts and importing from it something
         // for example a constant, then running npm run analyze-build
         // and as the result number of concatenated files does include
-        // that file ending test.ts but its content is not included
-        // this can be visible by src folder size in bundle: it was the same
-        // as before modifying regex to skip *.test.tsx? files
-        // also tested that with old regex that accepts all *.tsx? files
-        // src folder size in bundel does inclrease
+        // that file ending .test.ts but its content is not included
+        // this can be visible by comparing src folder size in bundle before
+        // and after importing a constant from mentioned *.test.ts file
         // Why number of concatenated files is still affected - because
-        // webpackConfig.resolve does allow all *.ts or *.tsx files and
-        // regexes are not supported there plus maybe we even don't need this
-        // because without this imports in test files themselves might stop
-        // working
-        test: /^.*[^t][^e][^s][^t]\.tsx?$/,
+        // webpackConfig.resolve does allow all *.ts or *.tsx files
+        // so this includes *.test.ts or *.test.tsx
+        // regexes are not supported in webpackConfig.resolve and I think
+        // its not needed because otherwise imports in test files themselves
+        // might stop working
+        test: /^.*(?!\.test).{5,5}\.tsx?$/,
         use: 'ts-loader',
         exclude: /node_modules/,
         include: [
