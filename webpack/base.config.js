@@ -43,6 +43,17 @@ module.exports = {
           {
             loader: 'ts-loader',
           },
+          {
+            loader: 'restrict-imports-loader',
+            options: {
+              severity: 'error',
+              rules: [
+                {
+                  restricted: /^[\.\/]*testdata.*$/,
+                },
+              ],
+            },
+          },
         ],
         exclude: /node_modules/,
         include: [
