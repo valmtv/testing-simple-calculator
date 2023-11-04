@@ -1,4 +1,5 @@
 import React from 'react';
+
 import trident from 'src/assets/trident.svg?url';
 import Trident from 'src/assets/trident.svg';
 import {Container, Header, Image} from './style';

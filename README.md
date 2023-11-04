@@ -1,10 +1,15 @@
 React template compatible with style agnostic components approach.
 
+
 # Testing
 
 ## Unit testing
 To avoid accidential importing test data into the build all test data must
-be stored in the `test-data/` folder in the root of the project.
+be stored in the `testdata` folder in the root of the project. There is webpack
+alias **testdata** for convenience but newer import from testdata in the code
+except test files to ensure testdata newer goes into the prod bundle increasing
+its size.
+
 While tests themselves can be placed anywhere in the `src/` folder where
 its more convenient for the developer but the naming convention for the
 test files is for them to end with `.test.ts` or `.test.tsx`.
@@ -84,6 +89,7 @@ declaration available to typescript. Check `src/type/svg.d.ts`.
 When using suggested resourseQuery method to be able to use svg as url there was
 typescript related issue which was fixed with the help of this
 [question](https://stackoverflow.com/questions/60816666/how-to-use-query-param-import-in-webpack-with-typescript-without-getting-cannot).
+
 
 # node & npm versions
 project created with node 20 and npm 10
