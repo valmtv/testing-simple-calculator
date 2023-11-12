@@ -26,22 +26,64 @@ describe('nonTestFiles matches file names', () => {
   });
 });
 
-const nonTestdata = /^[\.\/]*testdata.*$/;
+const testdata = /^[\.\/]*testdata.*$/;
 
-describe('nonTestdata matches path in the import section', () => {
+describe('testdata matches path in the import section', () => {
   it('starting with `testdata` (covers alias usage)', () => {
-    expect(nonTestdata.test('testdata')).toBeTruthy();
-    expect(nonTestdata.test('testdata/somedata')).toBeTruthy();
-    expect(nonTestdata.test('testdata/some/data')).toBeTruthy();
+    expect(testdata.test('testdata')).toBeTruthy();
+    expect(testdata.test('testdata/somedata')).toBeTruthy();
+    expect(testdata.test('testdata/some/data')).toBeTruthy();
   });
   it('import from testdata folder using diggingout `../`', () => {
-    expect(nonTestdata.test('../testdata/somedata')).toBeTruthy();
-    expect(nonTestdata.test('../../../testdata/somedata')).toBeTruthy();
+    expect(testdata.test('../testdata/somedata')).toBeTruthy();
+    expect(testdata.test('../../../testdata/somedata')).toBeTruthy();
   });
 });
 
 describe('demonstrate test data usage', () => {
   it('somedata property value is 1', () => {
     expect(data.p1).toBe(1);
+  });
+});
+
+const testFiles = /^.*\.test(\.(tsx?|jsx?))?$/;
+
+describe('testFiles matches path in the import section', () => {
+  // because in the import the extension maybe skipped
+  it('for test files ending with .test', () => {
+    expect('somefile.test'.match(testFiles)[0])
+      .toEqual('somefile.test');
+  });
+  it('for test files ending with .test.ts', () => {
+    expect('somefile.test.ts'.match(testFiles)[0])
+      .toEqual('somefile.test.ts');
+  });
+  it('for test files ending with .test.ts with word test in filename', () => {
+    expect('somefiletest.test.ts'.match(testFiles)[0])
+      .toEqual('somefiletest.test.ts');
+  });
+  it('for test files ending with .test.tsx', () => {
+    expect('somefile.test.tsx'.match(testFiles)[0])
+      .toEqual('somefile.test.tsx');
+  });
+  it('for test files ending with .test.tsx with word test in filename', () => {
+    expect('somefiletest.test.tsx'.match(testFiles)[0])
+      .toEqual('somefiletest.test.tsx');
+  });
+  it('for test files ending with .test.js', () => {
+    expect('somefile.test.js'.match(testFiles)[0])
+      .toEqual('somefile.test.js');
+  });
+  it('for test files ending with .test.js with word test in filename', () => {
+    expect('somefiletest.test.js'.match(testFiles)[0])
+      .toEqual('somefiletest.test.js');
+  });
+  it('for test files ending with .test.jsx', () => {
+    expect('somefile.test.jsx'.match(testFiles)[0])
+      .toEqual('somefile.test.jsx');
+  });
+  it('for test files ending with .test.jsx with word test in filename', () => {
+    expect('somefiletest.test.jsx'.match(testFiles)[0])
+      .toEqual('somefiletest.test.jsx');
   });
 });

@@ -50,6 +50,11 @@ module.exports = {
               rules: [
                 {
                   restricted: /^[\.\/]*testdata.*$/,
+                  info: 'do not import from testdata in non-test files',
+                },
+                {
+                  restricted: /^.*\.test(\.(tsx?|jsx?))?$/,
+                  info: 'do not import from test files',
                 },
               ],
             },
