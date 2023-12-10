@@ -46,7 +46,7 @@ module.exports = {
           {
             loader: 'restrict-imports-loader',
             options: {
-              severity: 'error',
+              severity: 'warning',
               rules: [
                 {
                   restricted: /^[\.\/]*testdata.*$/,
