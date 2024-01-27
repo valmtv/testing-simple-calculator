@@ -41,7 +41,14 @@ module.exports = {
         test: /^.*(?!\.test).{5,5}\.tsx?$/,
         use: [
           {
-            loader: 'ts-loader',
+            loader: 'babel-loader',
+            options: {
+              presets: [
+                ['@babel/preset-env', { targets: 'defaults' }],
+                '@babel/preset-react',
+                '@babel/preset-typescript',
+              ],
+            },
           },
           {
             loader: 'restrict-imports-loader',
