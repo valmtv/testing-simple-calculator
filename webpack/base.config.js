@@ -1,4 +1,5 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const ESLintPlugin = require('eslint-webpack-plugin');
 const path = require('path');
 
 module.exports = {
@@ -86,6 +87,10 @@ module.exports = {
     ],
   },
   plugins: [
+    new ESLintPlugin({
+      eslintPath: require.resolve('eslint'),
+      extensions: ['js', 'mjs', 'jsx', 'ts', 'tsx'],
+    }),
     new HtmlWebpackPlugin({
       title: 'React 18 Application Template',
       template: 'src/index.html',
