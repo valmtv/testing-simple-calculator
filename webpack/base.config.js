@@ -39,6 +39,10 @@ module.exports = {
         // its not needed because otherwise imports in test files themselves
         // might stop working
         test: /^.*(?!\.test).{5,5}\.tsx?$/,
+        include: [
+          path.resolve(__dirname, '../src'),
+          path.resolve(__dirname, '../node_modules/styleagnostic-bare-input'),
+        ],
         use: [
           {
             loader: 'babel-loader',
@@ -66,11 +70,6 @@ module.exports = {
               ],
             },
           },
-        ],
-        exclude: /node_modules/,
-        include: [
-          path.resolve(__dirname, '../src'),
-          path.resolve(__dirname, '../node_modules/styleagnostic-bare-input'),
         ],
       },
       {
