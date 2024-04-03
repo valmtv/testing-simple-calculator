@@ -11,3 +11,13 @@ export const Image = styled.img`
   color: yellow;
   background: lightgrey;
 `;
+
+export const Input = styled.input`
+  display: flex;
+  justify-content: center;
+  background: lightgrey;
+  margin: 50px;
+  width: 15rem;
+  height: 3rem;
+  font-size: 1.3rem;
+`;
