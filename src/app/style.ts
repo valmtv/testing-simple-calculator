@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 
-export const Container = styled.div``;
+export const Container = styled.div`
+  font-size: 2rem;
+`;
 
 export const Header = styled.h1`
   color: darkblue;
@@ -17,7 +19,7 @@ export const Input = styled.input`
   justify-content: center;
   background: lightgrey;
   margin: 50px;
-  width: 15rem;
-  height: 3rem;
-  font-size: 1.3rem;
+  width: 25rem;
+  height: 3.5rem;
+  font-size: 2rem;
 `;

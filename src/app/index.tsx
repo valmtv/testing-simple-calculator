@@ -40,7 +40,7 @@ const Application: React.FC = () => {
       onClick={inputClick} 
       onKeyDown={handleEnterClick}
     />
-    <div> Answer: {answer}</div>
+    <div>Answer: {answer}</div>
   </Container>;
 };
 export default Application;
